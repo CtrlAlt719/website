@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — RavenClaire Properties</title>
+  <meta name="description" content="Contact RavenClaire Properties. Enquire about viewings, listings or bespoke property services." />
+
+  <!-- Embedded CSS to save time, yes I know it's not the cleanest but works -->
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background:#f9f9f9; color:#333; line-height:1.6; }
+    
+    /* Header */
+    .site-header { background:#111; color:#fff; padding:20px 0; }
+    .site-header .logo { font-size:1.8em; font-weight:bold; color:#fff; text-decoration:none; }
+    .site-header .logo .sub { font-weight:normal; font-size:0.8em; color:#aaa; }
+    .nav a { color:#fff; text-decoration:none; margin-left:20px; font-weight:500; }
+    .menu-toggle { display:none; background:none; border:none; color:#fff; font-size:1.5em; cursor:pointer; }
+
+    /* Main container */
+    .container { width:90%; max-width:1200px; margin:0 auto; }
+
+    .page-header { padding:40px 0; text-align:center; }
+    .page-header h1 { font-size:2.2em; margin-bottom:10px; }
+    .page-header p.lead { font-size:1em; color:#555; }
+
+    /* Contact grid */
+    .contact-grid { display:flex; gap:40px; padding:40px 0; flex-wrap:wrap; justify-content:center; }
+    .contact-grid > div { flex:1; min-width:280px; background:#fff; padding:20px; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    .contact-grid h2,h3 { margin-bottom:10px; color:#111; }
+    .contact-grid p { margin-bottom:10px; }
+
+    /* Form styles */
+    .contact-form { display:flex; flex-direction:column; gap:15px; }
+    label { display:flex; flex-direction:column; font-weight:500; font-size:0.9em; }
+    input, textarea { padding:10px; border:1px solid #ccc; border-radius:5px; font-size:1em; margin-top:5px; }
+    input:focus, textarea:focus { border-color:#111; outline:none; }
+    .form-actions { display:flex; gap:10px; margin-top:10px; }
+    .btn { padding:10px 20px; border:none; border-radius:5px; cursor:pointer; background:#111; color:#fff; font-weight:500; }
+    .btn--ghost { background:transparent; border:2px solid #111; color:#111; }
+
+    .form-feedback { margin-top:10px; font-size:0.9em; color:green; }
+
+    /* Footer */
+    .site-footer { background:#111; color:#fff; padding:20px 0; text-align:center; margin-top:40px; }
+
+    @media(max-width:800px) {
+      .contact-grid { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">RavenClaire<span class="sub">Properties</span></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="listings.html">Listings</a>
+        <a href="competitors.html">Competitors</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Contact Us</h1>
+      <p class="lead">Email, phone, or send an enquiry below. For submission evidence include this page screenshot.</p>
+    </section>
+
+    <section class="contact-grid">
+      <div>
+        <h2>Get in touch</h2>
+        <p>Email: <a href="mailto:hello@ravenclaire.properties">hello@ravenclaire.properties</a></p>
+        <p>Phone: +27 76 649 1986</p>
+        <p>Address: B844 Ndwandwe RD, Empangeni (example)</p>
+        <h3>Office Hours</h3>
+        <p>Mon — Fri, 09:00 — 17:00</p>
+      </div>
+
+      <form id="contact-form" class="contact-form" novalidate>
+        <label>
+          Full name
+          <input id="name" name="name" type="text" required aria-required="true" />
+        </label>
+
+        <label>
+          Email
+          <input id="email" name="email" type="email" required aria-required="true" />
+        </label>
+
+        <label>
+          Phone
+          <input id="phone" name="phone" type="tel" pattern="^[0-9+\s\-()]{7,20}$" />
+        </label>
+
+        <label>
+          Message
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Send Enquiry</button>
+          <button id="clear-btn" type="button" class="btn btn--ghost">Clear</button>
+        </div>
+
+        <div id="form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> RavenClaire Properties</p>
+    </div>
+  </footer>
+
+  <!-- JS for form validation & actions -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('contact-form');
+    const feedback = document.getElementById('form-feedback');
+    const clearBtn = document.getElementById('clear-btn');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      // basic validation, not perfect but enough for submission
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if(name === "" || email === "" || message === ""){
+        feedback.style.color = "red";
+        feedback.textContent = "Please fill in all required fields.";
+        return;
+      }
+
+      feedback.style.color = "green";
+      feedback.textContent = "Thanks! Your enquiry has been sent. (Not really, just simulating 😅)";
+      form.reset();
+    });
+
+    clearBtn.addEventListener('click', () => {
+      form.reset();
+      feedback.textContent = "";
+    });
+  </script>
+</body>
+</html>
+

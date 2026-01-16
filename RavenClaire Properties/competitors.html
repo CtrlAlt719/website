@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Competitor Research — RavenClaire Properties</title>
+  <meta name="description" content="Competitor analysis for RavenClaire Properties — strengths, weaknesses and opportunities." />
+
+  <!-- Embedded CSS to save time, human-style, easy to tweak -->
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background:#f9f9f9; color:#333; line-height:1.5; }
+    
+    /* Header */
+    .site-header { background:#111; color:#fff; padding:20px 0; }
+    .site-header .logo { font-size:1.8em; font-weight:bold; color:#fff; text-decoration:none; }
+    .site-header .logo .sub { font-weight:normal; font-size:0.8em; color:#aaa; }
+    .nav a { color:#fff; text-decoration:none; margin-left:20px; font-weight:500; }
+    .menu-toggle { display:none; background:none; border:none; color:#fff; font-size:1.5em; cursor:pointer; }
+
+    .container { width:90%; max-width:1200px; margin:0 auto; padding:20px 0; }
+
+    .page-header { padding:20px 0; text-align:center; }
+    .page-header h1 { font-size:2em; margin-bottom:10px; }
+    .page-header p.lead { font-size:1em; color:#555; }
+
+    /* Table */
+    .competitor-table { width:100%; border-collapse:collapse; margin-top:30px; }
+    .competitor-table th, .competitor-table td { border:1px solid #ccc; padding:10px; text-align:left; }
+    .competitor-table th { background:#111; color:#fff; }
+    .competitor-table tr:nth-child(even) { background:#f2f2f2; }
+    .competitor-table td { font-size:0.95em; }
+
+    /* Conclusions */
+    h2 { margin-top:30px; color:#111; }
+    ol { margin-left:20px; margin-top:10px; }
+
+    /* Footer */
+    .site-footer { background:#111; color:#fff; padding:20px 0; text-align:center; margin-top:40px; }
+
+    @media(max-width:800px) {
+      .competitor-table, .competitor-table thead, .competitor-table tbody, .competitor-table th, .competitor-table td, .competitor-table tr { display:block; }
+      .competitor-table tr { margin-bottom:15px; }
+      .competitor-table td { text-align:right; padding-left:50%; position:relative; }
+      .competitor-table td::before { 
+        content: attr(data-label); 
+        position:absolute; 
+        left:10px; 
+        width:45%; 
+        padding-left:5px; 
+        font-weight:bold; 
+        text-align:left;
+      }
+      .competitor-table th { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">RavenClaire<span class="sub">Properties</span></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="listings.html">Listings</a>
+        <a href="competitors.html" aria-current="page">Competitors</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Competitor Research</h1>
+      <p class="lead">A short analysis of three competitors and opportunities for RavenClaire.</p>
+    </section>
+
+    <section>
+      <table class="competitor-table">
+        <thead>
+          <tr>
+            <th>Competitor</th>
+            <th>Strengths</th>
+            <th>Weaknesses</th>
+            <th>Opportunity for RavenClaire</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Competitor">Competitor A</td>
+            <td data-label="Strengths">Large marketing budget, many listings</td>
+            <td data-label="Weaknesses">Generic service, little personalization</td>
+            <td data-label="Opportunity for RavenClaire">Premium personalised service & selective listings</td>
+          </tr>
+          <tr>
+            <td data-label="Competitor">Competitor B</td>
+            <td data-label="Strengths">Strong online process for buyers</td>
+            <td data-label="Weaknesses">Weak offline concierge & bespoke service</td>
+            <td data-label="Opportunity for RavenClaire">White-glove in-person service and curated viewings</td>
+          </tr>
+          <tr>
+            <td data-label="Competitor">Competitor C</td>
+            <td data-label="Strengths">Low fees, fast listing turnaround</td>
+            <td data-label="Weaknesses">Lower-quality listings, poor aftercare</td>
+            <td data-label="Opportunity for RavenClaire">Focus on high-quality presentation and client care</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Conclusions & Recommendations</h2>
+      <ol>
+        <li>Differentiate with curated, private listings and concierge viewings.</li>
+        <li>Invest in listing presentation (professional photography, staging).</li>
+        <li>Offer bespoke aftercare & investment advice to buyers.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> RavenClaire Properties</p>
+    </div>
+  </footer>
+
+  <!-- JS for year update -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

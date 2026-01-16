@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RavenClaire Properties — Luxury Real Estate</title>
+  <meta name="description" content="RavenClaire Properties — Exclusive luxury homes, curated properties and white-glove real estate services. Discover premium residences and bespoke property services." />
+  <meta name="keywords" content="luxury real estate, premium homes, RavenClaire, estate agents, properties for sale, high-end homes" />
+
+  <!-- All styles embedded to save time, low-key messy but works for now -->
+  <style>
+    /* Basic reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { line-height: 1.6; color: #333; background-color: #f9f9f9; }
+
+    /* Header */
+    .site-header { background: #111; color: #fff; padding: 20px 0; }
+    .site-header .logo { font-size: 1.8em; font-weight: bold; text-decoration: none; color: #fff; }
+    .site-header .logo .sub { font-weight: normal; color: #aaa; font-size: 0.8em; }
+    .nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 500; }
+    .menu-toggle { display: none; background: none; border: none; font-size: 1.5em; color: #fff; cursor: pointer; }
+
+    /* Hero section */
+    .hero { display: flex; align-items: center; justify-content: space-between; padding: 60px 20px; background: #eee; flex-wrap: wrap; }
+    .hero-text { max-width: 500px; }
+    .hero-text h1 { font-size: 2.5em; margin-bottom: 20px; color: #111; }
+    .hero-text p.lead { font-size: 1.1em; margin-bottom: 20px; }
+    .btn { padding: 10px 20px; background: #111; color: #fff; text-decoration: none; border-radius: 5px; margin-right: 10px; }
+    .btn--ghost { background: transparent; border: 2px solid #111; color: #111; }
+    .hero-media img { max-width: 500px; border-radius: 10px; }
+
+    /* Featured listings */
+    .featured h2 { text-align: center; margin-bottom: 30px; }
+    .grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .grid div { background: #fff; padding: 10px; border-radius: 5px; width: 250px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; cursor: pointer; transition: transform 0.2s; }
+    .grid div:hover { transform: translateY(-5px); }
+
+    /* Why section */
+    .why { padding: 60px 20px; background: #fff; }
+    .why h2 { text-align: center; margin-bottom: 30px; }
+    .three-col { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .card { background: #f1f1f1; padding: 20px; border-radius: 5px; width: 250px; text-align: center; }
+
+    /* Testimonial */
+    .testimonial { padding: 40px 20px; font-style: italic; text-align: center; }
+
+    /* Footer */
+    .site-footer { background: #111; color: #fff; padding: 20px 0; text-align: center; }
+    .site-footer a { color: #fff; margin-left: 10px; text-decoration: none; }
+
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); align-items:center; justify-content:center; flex-direction:column; z-index: 9999; }
+    .lightbox img { max-width: 80%; max-height: 70%; border-radius: 10px; margin-bottom: 10px; }
+    .lightbox-caption { color: #fff; font-size: 1.2em; margin-bottom: 20px; }
+    .lightbox-close { background: #fff; border:none; border-radius:5px; padding:5px 10px; cursor:pointer; font-weight:bold; }
+
+    /* Responsive */
+    @media(max-width: 800px){
+      .hero { flex-direction: column; text-align: center; }
+      .hero-media img { max-width: 90%; margin-top: 20px; }
+      .three-col { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">RavenClaire<span class="sub">Properties</span></a>
+      <nav class="nav" id="main-nav">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="listings.html">Listings</a>
+        <a href="competitors.html">Competitors</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>RavenClaire Properties</h1>
+          <p class="lead">Curating exceptional residences for discerning buyers. Luxury homes. Timeless design. White-glove service.</p>
+          <div class="cta">
+            <a class="btn" href="listings.html">View Listings</a>
+            <a class="btn btn--ghost" href="contact.html">Get In Touch</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img src="images/hero.jpg" alt="Luxurious modern home exterior - RavenClaire Properties">
+        </figure>
+      </div>
+    </section>
+
+    <section class="featured container">
+      <h2>Featured Listings</h2>
+      <div id="featured-grid" class="grid">
+        <!-- JS will populate featured listings -->
+      </div>
+      <div class="center">
+        <a href="listings.html" class="btn">Explore All Listings</a>
+      </div>
+    </section>
+
+    <section class="why container">
+      <h2>Why RavenClaire?</h2>
+      <div class="three-col">
+        <article class="card">
+          <h3>White-Glove Service</h3>
+          <p>Dedicated advisors handle every detail — viewings, valuations, and closing logistics. No stress, just keys.</p>
+        </article>
+        <article class="card">
+          <h3>Curated Inventory</h3>
+          <p>Handpicked homes that match lifestyle, design, and investment goals. Quality over quantity, always.</p>
+        </article>
+        <article class="card">
+          <h3>Market Expertise</h3>
+          <p>Local insights, premium negotiations, and discreet listings for high-net-worth buyers. We know the game.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonial container">
+      <blockquote>
+        “RavenClaire found us the perfect home — discreet, efficient and truly premium.” — A. Mbatha
+      </blockquote>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> RavenClaire Properties — All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <img class="lightbox-img" src="" alt="">
+    <p class="lightbox-caption"></p>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Auto-update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Featured listings JS
+    const featuredGrid = document.getElementById('featured-grid');
+    const listings = [
+        { title: "Modern Villa", img: "images/listing1.jpg", price: "$1,200,000" },
+        { title: "Luxury Condo", img: "images/listing2.jpg", price: "$850,000" },
+        { title: "Beachfront Estate", img: "images/listing3.jpg", price: "$2,500,000" }
+    ];
+
+    listings.forEach(listing => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <img src="${listing.img}" alt="${listing.title}" style="width:100%;border-radius:5px;cursor:pointer;" onclick="openLightbox('${listing.img}','${listing.title}')">
+            <h4>${listing.title}</h4>
+            <p>${listing.price}</p>
+        `;
+        featuredGrid.appendChild(div);
+    });
+
+    // Lightbox JS
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const lightboxCaption = document.querySelector('.lightbox-caption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    function openLightbox(imgSrc, caption) {
+        lightboxImg.src = imgSrc;
+        lightboxCaption.textContent = caption;
+        lightbox.style.display = 'flex';
+    }
+
+    lightboxClose.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
+

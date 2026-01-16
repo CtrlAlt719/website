@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — RavenClaire Properties</title>
+  <meta name="description" content="About RavenClaire Properties — mission, vision and the team behind our luxury real estate service." />
+
+  <!-- Embedded CSS for speed and consistent style -->
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background:#f9f9f9; color:#333; line-height:1.5; }
+
+    /* Header */
+    .site-header { background:#111; color:#fff; padding:20px 0; }
+    .site-header .logo { font-size:1.8em; font-weight:bold; color:#fff; text-decoration:none; }
+    .site-header .logo .sub { font-weight:normal; font-size:0.8em; color:#aaa; }
+    .nav a { color:#fff; text-decoration:none; margin-left:20px; font-weight:500; }
+    .menu-toggle { display:none; background:none; border:none; color:#fff; font-size:1.5em; cursor:pointer; }
+
+    .container { width:90%; max-width:1200px; margin:0 auto; padding:20px 0; }
+
+    /* Page header */
+    .page-header { text-align:center; padding:20px 0; }
+    .page-header h1 { font-size:2em; margin-bottom:10px; }
+    .page-header p.lead { font-size:1em; color:#555; }
+
+    /* Two-column layout */
+    .two-col { display:flex; gap:40px; margin-top:30px; flex-wrap:wrap; }
+    .two-col > div { flex:2; }
+    .two-col aside { flex:1; background:#fff; padding:15px; border-radius:5px; box-shadow:0 0 8px rgba(0,0,0,0.05); }
+    h2, h3 { color:#111; margin-bottom:10px; margin-top:15px; }
+    ul, ol { margin-left:20px; margin-top:5px; }
+    p { margin-bottom:10px; }
+
+    /* Footer */
+    .site-footer { background:#111; color:#fff; padding:20px 0; text-align:center; margin-top:40px; }
+
+    /* Responsive adjustments */
+    @media(max-width:800px) {
+      .two-col { flex-direction:column; }
+      .two-col aside { margin-top:20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">RavenClaire<span class="sub">Properties</span></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="listings.html">Listings</a>
+        <a href="competitors.html">Competitors</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="container">
+    <section class="page-header">
+      <h1>About RavenClaire Properties</h1>
+      <p class="lead">We specialise in premium residences and bespoke property services for discerning clients.</p>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2>Mission</h2>
+        <p>To provide personalised, discreet and market-leading real estate services that connect premium properties with the right buyers — efficiently and elegantly.</p>
+
+        <h2>Vision</h2>
+        <p>To be the most trusted curator of luxury homes in our regions — synonymous with quality, integrity and exceptional client experience.</p>
+      </div>
+
+      <aside>
+        <h3>Target Users</h3>
+        <ul>
+          <li>High-net-worth buyers and investors</li>
+          <li>International buyers seeking premium residences</li>
+          <li>Sellers wanting discreet, high-value transactions</li>
+        </ul>
+
+        <h3>Key Goals</h3>
+        <ol>
+          <li>Curate 30+ premium listings annually</li>
+          <li>Maintain a 95% client satisfaction standard</li>
+          <li>Deliver personalised, closed-loop service to buyers/sellers</li>
+        </ol>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Scope & Deliverables (for this assignment)</h2>
+      <p>This website includes: Home, About, Listings (dynamic search), Competitor research, Contact form (client-side validation & response), responsive layout, image lightbox, interactive map embed, README and CHANGELOG for GitHub.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> RavenClaire Properties</p>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-update year, because I keep forgetting
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
