@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us | ByteWorks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; font-family:'Poppins', sans-serif; }
+    body { line-height:1.6; background:#f9fafb; color:#333; }
+    a { text-decoration:none; color:inherit; }
+
+    /* Header & Nav */
+    .site-header { background:#1e3a8a; color:#fff; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:999; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+    .site-header .logo { font-size:1.75rem; font-weight:700; color:#f59e0b; }
+    nav ul.menu { display:flex; gap:2rem; list-style:none; }
+    nav ul.menu li a:hover, nav ul.menu li a.active { color:#f59e0b; border-bottom:2px solid #f59e0b; }
+    .nav-toggle { display:none; }
+
+    @media(max-width:768px){
+      nav ul.menu { flex-direction:column; display:none; position:absolute; top:70px; right:0; background:#1e3a8a; width:200px; padding:1rem; border-radius:0 0 1rem 1rem; }
+      nav ul.menu.show{ display:flex; }
+      .nav-toggle { display:block; background:none; border:2px solid #fff; color:#fff; padding:0.25rem 0.5rem; border-radius:0.5rem; cursor:pointer; }
+    }
+
+    /* Hero Section */
+    .hero { text-align:center; padding:4rem 1rem; background:linear-gradient(to right,#2563eb,#1e3a8a); color:#fff; border-radius:0 0 2rem 2rem; }
+    .hero h1 { font-size:2.5rem; margin-bottom:1rem; }
+    .hero p { font-size:1.2rem; }
+
+    /* Content */
+    .content { max-width:900px; margin:2rem auto; padding:0 1rem; text-align:center; }
+    .content h2 { color:#1e3a8a; margin-bottom:1rem; font-size:2rem; }
+    .content p { font-size:1.1rem; margin-bottom:1rem; color:#555; line-height:1.6; }
+
+    /* Footer */
+    .site-footer { text-align:center; padding:2rem; background:#1e3a8a; color:#fff; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="../index.html">ByteWorks</a>
+    <button class="nav-toggle">Menu</button>
+    <nav>
+      <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="enquiry.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>About ByteWorks</h1>
+    <p>Your trusted platform connecting IT talent with top employers worldwide.</p>
+  </section>
+
+  <section class="content">
+    <h2>Our Mission</h2>
+    <p>To empower IT professionals by providing access to exciting opportunities while helping companies find verified, highly skilled talent.</p>
+    <h2>Our Vision</h2>
+    <p>To become the leading global platform for IT talent, fostering innovation, growth, and success for both professionals and employers.</p>
+    <h2>Why Choose Us?</h2>
+    <p>We verify all professionals, provide diverse skill coverage, and make the hiring process easy, fast, and reliable.</p>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> ByteWorks. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.menu');
+    navToggle.addEventListener('click', () => { menu.classList.toggle('show'); });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
